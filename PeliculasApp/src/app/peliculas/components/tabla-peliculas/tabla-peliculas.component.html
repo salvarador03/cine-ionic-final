@@ -1,0 +1,43 @@
+<!-- Aquí está la tabla donde se van a insertar los resultados de las películas -->
+<table class="table table-responsive-md table-condensed">
+
+    <!-- Encabezado de la tabla -->
+    <thead class="bg-dark text-white">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Título</th>
+            <th scope="col">Género</th>
+            <th scope="col">Año</th>
+            <th scope="col">Director</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Descuento</th>
+            <th scope="col"></th> <!-- Mostrar detalles -->
+            <th scope="col"></th> <!-- Editar -->
+            <th scope="col"></th> <!-- Eliminar -->
+        </tr>
+    </thead>
+    
+    <!-- Cuerpo de la tabla. Aquí es donde se van a insertar las películas -->
+    <tbody>
+        <tr *ngFor="let pelicula of peliculas; let i = index">
+            <td>{{ pelicula.id }}</td>
+            <td>{{ pelicula.titulo }}</td>
+            <td>{{ pelicula.genero }}</td>
+            <td>{{ pelicula.ano }}</td>
+            <td>{{ pelicula.director }}</td>
+            <td>{{ pelicula.precio}}</td>
+            <td>{{ pelicula.descuento }}%</td>
+            <td>
+                <ion-icon name="eye" [routerLink]="['..', pelicula.id ]" style="cursor: pointer;"></ion-icon>
+            </td>
+            <td>
+                <ion-icon name="pencil" [routerLink]="['../editar', pelicula.id ]" style="cursor: pointer;"></ion-icon>
+            </td>
+            <td>
+                <ion-icon name="trash" (click)="borrarPelicula(i)" style="cursor: pointer;"></ion-icon>
+            </td>
+              
+        </tr>        
+    </tbody>
+</table>
+

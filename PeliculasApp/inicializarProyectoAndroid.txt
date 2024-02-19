@@ -1,0 +1,6 @@
+npm install @capacitor/core @capacitor/cli
+npm install @capacitor/android
+npx cap init
+npx cap add android
+
+npx cap open android

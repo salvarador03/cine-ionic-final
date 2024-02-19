@@ -1,0 +1,52 @@
+<style>
+  input {
+      background-color: rgb(255, 255, 198);
+  }
+  input:hover {
+      background-color: rgb(255, 255, 198);
+  }
+</style>
+<form [formGroup]="formulario" class="container mt-4" autocomplete="off">
+  <div class="card">
+    <div class="card-body">
+      <div class="mb-3">
+        <label for="titulo" class="form-label">Título</label>
+        <input formControlName="titulo" type="text" id="titulo" class="form-control" readonly>
+      </div>
+
+      <div class="mb-3">
+        <label for="genero" class="form-label">Género</label>
+        <input formControlName="genero" type="text" id="genero" class="form-control" readonly>
+      </div>
+
+      <div class="mb-3">
+        <label for="ano" class="form-label">Año</label>
+        <input formControlName="ano" type="number" id="ano" class="form-control" readonly>
+      </div>
+
+      <div class="mb-3">
+        <label for="director" class="form-label">Director</label>
+        <input formControlName="director" type="text" id="director" class="form-control" readonly>
+      </div>
+
+      <div class="mb-3">
+        <label for="precio" class="form-label">Precio (€)</label>
+        <input formControlName="precio" type="number" id="precio" class="form-control" readonly>
+      </div>
+
+      <div class="mb-3">
+        <label for="descuento" class="form-label">Descuento (%)</label>
+        <input formControlName="descuento" type="number" id="descuento" class="form-control" readonly>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12 d-flex justify-content-end">
+          <button class="btn btn-primary me-2" routerLink="/peliculas/todos">Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+  
+  

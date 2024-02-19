@@ -1,0 +1,22 @@
+<ion-menu contentId="main-content" side="start" menuId="first" type="overlay">
+    <ion-content>
+      <ion-list id="inbox-list">
+        <ion-list-header>CineClub</ion-list-header>
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+          <ion-item [routerLink]="[p.url]" detail="false">
+            <ion-icon slot="start" [name]="p.icon"></ion-icon>
+            <ion-label>{{ p.title }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <!-- Botones de sesión -->
+        <ion-item *ngIf="(estaSesionIniciada() | async)" (click)="cerrarSesion()">
+          <ion-icon slot="start" name="log-out"></ion-icon>
+          <ion-label>Cerrar Sesión</ion-label>
+        </ion-item>
+        <ion-item *ngIf="!(estaSesionIniciada() | async)" [routerLink]="['/login']">
+          <ion-icon slot="start" name="log-in"></ion-icon>
+          <ion-label>Iniciar Sesión</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>

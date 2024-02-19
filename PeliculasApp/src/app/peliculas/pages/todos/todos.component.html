@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Lista de Películas
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <br>
+    <div class="container-fluid">
+        <div class="d-flex justify-content-end">
+            <div class="col mb-1">
+                <app-filtro-busqueda placeholder="Introduce el término de búsqueda" (onBusquedaEjecutada)="buscar($event)">
+                </app-filtro-busqueda>
+            </div>
+            <div class="col-md-1">
+                <ion-button routerLink="../agregar" fill="solid" color="dark">
+                <ion-icon name="add"></ion-icon>
+                </ion-button>
+            </div>
+        </div>                           
+      <app-tabla-peliculas [peliculas]="peliculas" (onBorrar)="borrarPelicula($event)"></app-tabla-peliculas>
+      <app-paginador-numerico (paginaSeleccionada)="manejarPaginaSeleccionada($event)"></app-paginador-numerico>
+    </div>
+  </ion-content>
+  
+
+

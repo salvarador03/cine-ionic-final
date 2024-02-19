@@ -1,0 +1,29 @@
+<ion-header [translucent]="true" class="bg-dark text-white">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Películas por Abecedario
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content [fullscreen]="true">
+    <div class="container-fluid">
+      <div class="row mt-3">
+        <div class="col-md-9 mb-3">
+          <app-select (ordenSeleccionado)="onOrdenSeleccionado($event)"></app-select>
+        </div>
+        <div class="col-md-3 mb-3 d-flex justify-content-end">
+          <ion-button routerLink="../agregar" fill="solid" color="dark">
+            <ion-icon name="add"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+      <app-tabla-peliculas [peliculas]="peliculas" (onBorrar)="borrarPelicula($event)"></app-tabla-peliculas>
+      <app-paginador-abecedario (letraSeleccionada)="cargarPeliculasPorLetra($event)"></app-paginador-abecedario>
+    </div>
+  </ion-content>
+  
+  
